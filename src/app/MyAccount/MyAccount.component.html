@@ -1,0 +1,84 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <!-- Profil Kartı -->
+      <div class="card">
+
+        <!-- <div class="form-file">
+          <label class="form-file-label" for="images">
+              <input type="file" id="images" class="form-file-input"  >
+              <span class="form-file-text"></span>
+              <img src="" alt="Örnek Resim"> -->
+              <ng-container *ngIf="imageInfos | async as blob">
+                  <p>{{ getBlobName(blob) }}</p>
+                  <img class="card-img-top profile-img" [src]="getBlobUrl(blob)" alt="{{ getBlobName(blob) }}" height="280px" />
+              </ng-container>
+              <button  class="btn btn-success" type="button" onClick="parent.location='http://localhost:4200/upload-images'">Fotoğrafı Değiştir</button>
+          <!-- </label> -->
+        <!-- </div> -->
+        
+      </div>
+      <div class="card-body">
+          
+        <h5 class="card-title"> <strong>Kullanıcı Adı: {{MyAccount.userName}}</strong></h5>
+        <p class="card-text"><strong>İsim: {{MyAccount.name}}</strong> </p>
+        <p class="card-text"><strong>Soyadı: {{MyAccount.surname}}</strong> </p>
+        <p class="card-text"><strong>Mail Adresi: {{MyAccount.mailAddress}} istanbul.edu.tr</strong></p>
+        <p class="card-text"  ><strong>Adres: {{MyAccount.address}}</strong></p>
+        <p class="card-text"><strong>Bölüm: {{MyAccount.department}}</strong></p>
+        <p class="card-text"><strong>Yaş: {{MyAccount.age}}</strong></p>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <!-- Bilgi Düzenleme Formu -->
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Bilgileri Düzenle</h5>
+          <div>
+            <div class="mb-3">
+              <label for="username" class="form-label"  >Kullanıcı Adı</label>
+              <input type="text" class="form-control" id="username" value= {{MyAccount.userName}} disabled >
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">İsim</label>
+              <input type="text" class="form-control" [(ngModel)]="MyAccount.name" id="name" >
+            </div>
+            <div class="mb-3">
+              <label for="surname" class="form-label">Soyadı</label>
+              <input type="text" class="form-control" [(ngModel)]="MyAccount.surname" id="surname" >
+            </div>
+            <div class="input-group mb-3 ">
+              <label for="email" class="form-label w-100">Mail Adresi</label>
+              <input type="email"  [(ngModel)]="MyAccount.mailAddress"  class="form-control" id="email" >
+              <span class="input-group-text">istanbul.edu.tr</span>
+            </div>
+            <div class="mb-3">
+              <label for="address" class="form-label">Adres</label>
+              <input type="text" [(ngModel)]="MyAccount.address" class="form-control" id="address" >
+            </div>
+            <div class="mb-3">
+              <label for="department" class="form-label">Bölüm</label>
+              <input type="text" [(ngModel)]="MyAccount.department" class="form-control" id="department" >
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">Yaş</label>
+              <input type="number" [(ngModel)]="MyAccount.age" class="form-control" id="age" >
+            </div>
+            <div class="btn-group-">
+              <button type="submit" (click)="deleteclick()" class="btn btn-danger">Sil</button>
+              <button type="submit" (click)="UpdateClick()" class="btn btn-success">Bİlgilerimi güncelle</button>
+              
+              <br><br>
+
+              <button  class="btn btn-info" type="button" onClick="parent.location='http://localhost:4200/arastirmacilar'">AVESİS BİLGİLERİM</button>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

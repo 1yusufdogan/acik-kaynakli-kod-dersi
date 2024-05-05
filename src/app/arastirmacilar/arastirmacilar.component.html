@@ -1,0 +1,89 @@
+<div id="regForm" action="">
+
+  <h1>Avesis Kişisel Formunuz:</h1>
+  
+  <!-- One "tab" for each step in the form: -->
+  <ng-container *ngIf="currentTab==1">
+  
+  <div>Ana Sayfa Bilgileriniz:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciAnaSayfa.genelBilgiler" placeholder="Genel Bilgileriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciAnaSayfa.metrikler" placeholder="Metrikleriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciAnaSayfa.iletisim" placeholder="İletişim Bilgileriniz..." oninput="this.className = ''"></p>
+
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==2">
+  <div>Eğitim Bilgileriniz :
+    <p><input [(ngModel)]="arastirmaci.arastirmaciEgitimBilgileri.egitimBilgileri" placeholder="Eğitim Bilgileriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciEgitimBilgileri.yaptigiTezler" placeholder="yaptığınız Tezler..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciEgitimBilgileri.sertifikaKursVeEgitimler" placeholder="Sertifika ,Kurs ve Eğitimler..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+  
+<ng-container *ngIf="currentTab==3">
+  <div>Araştırma Alanları:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciArastirmaAlanlari.arastirmaAlanlari" placeholder="Araştırma Alanlarınız..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==4">
+  <div>Akademik İdari Deneyim:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciAkademikIdariDeneyim.akademikUnvanlar" placeholder="Akademik Ünvanlarınız..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciAkademikIdariDeneyim.akademiDisiDeneyim" placeholder="Akademi Dışı Deneyimleriniz..." oninput="this.className = ''"></p>
+    <p><input  [(ngModel)]="arastirmaci.arastirmaciAkademikIdariDeneyim.yonetilenTezler" placeholder="Yönettiğiniz Tezleriniz..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==5">
+  <div>Yayınlar Ve Eserler:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciYayinlarVeEserler.yayinlarVeEserler" placeholder="Yayınlar ve Eserleriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciYayinlarVeEserler.digerDergilerdeYayinlananMakaleler" placeholder="Diğer Dergilerde Yayınlanan Makaleleriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciYayinlarVeEserler.hakemliKongreBildiriKitaplarindaYerAlanYayinlar" placeholder="Hakemli Kongre Bİldiri Kitaplarında Yer Alan Yayinlar..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciYayinlarVeEserler.kitapBolumleri" placeholder="Kitap Bölümleri..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciYayinlarVeEserler.metrikler" placeholder="Metrikler..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==6">
+  <div>Proje & Patent & Tasarım:
+    <p><input  [(ngModel)]="arastirmaci.arastirmaciProjePatentVeTasarim.desteklenenProjeler" placeholder="Desteklenen Projeleriniz..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==7">
+  <div>Bilimsel Faaliyetler:
+    <p><input  [(ngModel)]="arastirmaci.arastirmaciBilimselFaaliyetler.juriUyelikler" placeholder="Jüri Üyelikleriniz..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==8">
+  <div>Başarılar ve Tanınırlık:
+    <p><input  [(ngModel)]="arastirmaci.arastirmaciBasarilarVeTaninirlik.yillaraGoreYayinVeAtifSayilari" placeholder="Yıllara Göre Yayın ve Atıf Sayınız..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciBasarilarVeTaninirlik.yayinSayilari" placeholder="Yayin Sayınız..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==9">
+  <div>Duyurular ve Dökümanlar:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciDuyurularVeDokumanlar.duyurularVeDokumanlar" placeholder="Duyuru ve Dökümanlarınız..." oninput="this.className = ''"></p>
+  </div>
+</ng-container>
+<ng-container *ngIf="currentTab==10">
+  <div>İletişim:
+    <p><input [(ngModel)]="arastirmaci.arastirmaciIletisim.adresBilgileri" placeholder="Adres Bilgileriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciIletisim.epostaBilgileri" placeholder="E-posta Bilgileriniz..." oninput="this.className = ''"></p>
+    <p><input [(ngModel)]="arastirmaci.arastirmaciIletisim.uluslararasiArastirmaciIdler" placeholder="Uluslararası Araştırmacı ID'leriniz..." oninput="this.className = ''"></p>
+    <a href="http://localhost:4200/MyAccount">Hesabıma geri dön</a>
+  </div>
+</ng-container>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button class="btn btn-danger" type="button" id="prevBtn" (click)="nextPrev(-1)">Previous</button>
+      <button class="btn btn-primary" *ngIf="currentTab!=maxTab" type="button" id="nextBtn" (click)="nextPrev(1)">Next</button>
+      <button class="btn btn-success" *ngIf="currentTab==maxTab" type="button" id="saveBtn" (click)="saveArastirmaci()">Save</button>
+    </div>
+  </div>
+  
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+  
+</div>
